@@ -1,8 +1,9 @@
 #ma13_lambdata/tvt_fxn.py
-#function to create a train/validate/test split
-#after it requests a target, we should create the respective x feature matrix and and y target vectors
 
 def tvt_split(df):
+    """
+    simple function to create a test/validate/train split on a dataset
+    """
     from sklearn.model_selection import train_test_split
 
     #first declare train and test
