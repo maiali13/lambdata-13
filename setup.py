@@ -9,7 +9,7 @@ setup(
     name="ma-lambdata-13", # the name that you will install via pip
     version="1.0",
     author="Miriam Ali",
-    author_email="@gmail.com",
+    author_email="maryamfawaz@gmail.com",
     description="A short description",
     long_description=long_description,
     long_description_content_type="text/markdown", # required if using a md file for long desc
