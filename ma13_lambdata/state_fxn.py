@@ -1,15 +1,16 @@
 #ma13_lambdata/my_script.py
 
+#GIVEN: dataframe with column called "abbrev" which has state abreviations
+#GOAL: create a new column called "state_name" which has corresponing state name
 import pandas
 
-
 def state_convert(my_df):
-
+    """
+    function to convert state abbreviations to their full name
+    """
     df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
     #print(df.head())
 
-#GIVEN: dataframe with column called "abbrev" which has state abreviations
-#GOAL: create a new column called "state_name" which has corresponing state name
     names_map = {
         'AK': 'Alaska',
         'AL': 'Alabama',
@@ -68,14 +69,12 @@ def state_convert(my_df):
         'WI': 'Wisconsin',
         'WV': 'West Virginia',
         'WY': 'Wyoming'
-}
+    }
     df["state_name"] = df["abbrev"].map(names_map)
-    
-
     return df
 
 df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
-full_df= state_convert(df)
+full_df = state_convert(df)
 print(full_df.head())
 
 
@@ -84,12 +83,5 @@ full_df2 = state_convert(df2)
 print(full_df2.head())
 
 
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    pass
