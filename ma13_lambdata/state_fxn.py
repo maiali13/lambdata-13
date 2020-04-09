@@ -2,7 +2,7 @@
 
 #GIVEN: dataframe with column called "abbrev" which has state abreviations
 #GOAL: create a new column called "state_name" which has corresponing state name
-import pandas
+import pandas as pd
 ​
 class StateNames(pandas.DataFrame):
     """
@@ -13,7 +13,7 @@ class StateNames(pandas.DataFrame):
         """
         function to convert state abbreviations to their full name
         """
-        df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
+        df = pd.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
         #print(df.head())
 
         names_map = {
@@ -80,12 +80,12 @@ class StateNames(pandas.DataFrame):
 
 if __name__ == "__main__":
 
-    df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
+    df = pd.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
     full_df = state_convert(df)
     print(full_df.head())
 
 
-    df2 = pandas.DataFrame({"abbrev": ["AL", "NY", "CA", "FL", "WA"]})
+    df2 = pd.DataFrame({"abbrev": ["AL", "NY", "CA", "FL", "WA"]})
     full_df2 = state_convert(df2)
     print(full_df2.head())
 
