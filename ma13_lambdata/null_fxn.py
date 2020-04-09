@@ -4,6 +4,9 @@ def col_nulls(df):
     """
     given a dataframe, returns which columns contain null values
     """
+    import pandas as pd
+    import numpy as np
+    
     series = dataframe.isnull().any()
     null_columns = pd.DataFrame(series, columns=['Nulls'])
     null = False
