@@ -1,4 +1,5 @@
 # test/strings_test.py
+from ma13_lambdata.state_fxn import StateNames
 from ma13_lambdata.null_fxn import col_nulls
 
 import unittest
@@ -7,6 +8,14 @@ class TestStrings(unittest.TestCase):
     """
     class for function tests
     """
+    def test_state_fxn(self):
+        custom_df = CustomFrame({"abbrev": ["CT", "CO", "CA", "TX"]})
+        assert custom_df.columns.tolist() == ["abbrev"]
+        #self.assertEqual(custom_df.columns.tolist(), ["abbrev"])
+        custom_df.state_convert() #test should always invoke functionality directly
+        #self.assertEqual(custom_df.columns.tolist(), ["abbrev", "state_name"])
+        assert custom_df.columns.tolist() == ["abbrev", "state_name"]
+
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOO')
 
@@ -24,6 +33,8 @@ class TestStrings(unittest.TestCase):
     def test_col_nulls(self):
         test_df = pd.DataFrame(np.random.randint(0, 100, size=(15, 3)), columns=list('ABCD'))
         self.assertTrue(col_nulls == 'Your dataframe contains no null values')
+
+
 
 if __name__ == '__main__':
     unittest.main()
