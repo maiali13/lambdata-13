@@ -73,15 +73,13 @@ def state_convert(my_df):
     df["state_name"] = df["abbrev"].map(names_map)
     return df
 
-df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
-full_df = state_convert(df)
-print(full_df.head())
-
-
-df2 = pandas.DataFrame({"abbrev": ["AL", "NY", "CA", "FL", "WA"]})
-full_df2 = state_convert(df2)
-print(full_df2.head())
-
-
 if __name__ == "__main__":
-    pass
+        
+    df = pandas.DataFrame({"abbrev": ["CT", "CO", "CA", "FL", "TX"]})
+    full_df = state_convert(df)
+    print(full_df.head())
+
+
+    df2 = pandas.DataFrame({"abbrev": ["AL", "NY", "CA", "FL", "WA"]})
+    full_df2 = state_convert(df2)
+    print(full_df2.head())
