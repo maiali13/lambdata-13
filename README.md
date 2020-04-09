@@ -4,7 +4,7 @@ unit 3 sprint 1
 ## Installation
 
 ```sh
-pip install -i https://test.pypi.org/simple/ ma-lambdata-13==1.0.3
+pip install -i https://test.pypi.org/simple/ ma-lambdata-13==1.0.4
 ```
 
 
